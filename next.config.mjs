@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+        remotePatterns: [new URL ('https://ecommerce.routemisr.com/**/**')]
+    }
+};
 
 export default nextConfig;

@@ -1,44 +1,27 @@
-import axios from 'axios'
-import Link from 'next/link';
 import React from 'react'
-
-const App = async () => {
-
-  async function getAllProduct() {
-    try {
-      let { data } = await axios.get("https://ecommerce.routemisr.com/api/v1/products");
-
-      return data.data
-    } catch (error) {
-      return error;
-    }
-  }
+import getAllProducts from '../apis/allProducts'
+import HomeCard from './_components/HomeCard/HomeCard';
+import MainSlider from './_components/MainSlider/MainSlider';
+import CategorySlider from './_components/CategorySlider/CategorySlider';
 
 
 
+export default async function Home() {
 
-  const data = await getAllProduct()
-
-
+  const data = await getAllProducts()
 
   return (
-    <div className='grid grid-cols-12 my-10'>
-      {data.map(function (pro, idx) {
-        return (
-          <div key={idx} className='col-span-2 p-2'>
-            <Link href={`/shop/${pro.id}`}>
-              <div className='w-full bg-emerald-400 p-2'>
-                <img src={pro.imageCover} className='w-full' alt='' />
-              </div>
-            </Link>
-          </div>
-        )
-      })}
+    <section className='px-5 md:px-0 my-10 w-full md:w-[80%] mx-auto'>
 
-      <h1>Main</h1>
+      <MainSlider />
+      
+      <CategorySlider />
 
-    </div>
+
+      <div className='flex flex-wrap'>
+        {data.map((product, idx) => <HomeCard key={idx} product={product} />)}
+      </div>
+
+    </section>
   )
 }
-
-export default App

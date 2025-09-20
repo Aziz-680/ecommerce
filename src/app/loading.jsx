@@ -1,11 +1,11 @@
 import React from 'react'
 
-function loading() {
+function Loading() {
   return (
     <div className='flex justify-center items-center h-screen'>
-        <h1 className='text-3xl text-center bg-red-700'> Loading...</h1>
+        <h1 className='fa-solid fa-spinner fa-spin fa-7x text-emerald-400'></h1>
     </div>
   )
 }
 
-export default loading
+export default Loading

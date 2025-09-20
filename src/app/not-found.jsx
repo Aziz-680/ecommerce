@@ -9,7 +9,7 @@ const NotFound = () => {
 
 
 
-        <div className=' text-white'>
+        <div className=' text-white bg-black  '>
 
 
 
@@ -39,7 +39,7 @@ const NotFound = () => {
                     </h2>
 
                     <p className="mt-3 text-lg text-slate-400 max-w-md mx-auto">
-                        Houston, we have a problem. The page you're looking for seems to have drifted off into the cosmos.
+                        Hey... you lost. Anyways, its not too late to return back.
                     </p>
 
                     <Link href="/" className="mt-10 inline-block px-8 py-4 text-lg font-semibold bg-indigo-700 rounded-lg text-emerald-400 focus:outline-none focus:ring-4 focus:ring-indigo-300 hover:scale-110 transform transition-transform duration-500">
